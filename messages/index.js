@@ -29,12 +29,9 @@ bot.dialog('/', function (session) {
         session.send(myurl.toString())
         var inhalt = $('h1').text();
         session.send(inhalt);
-        )
-
-
-    }
+        }
     });
-
+    
     });
 
 if (useEmulator) {
