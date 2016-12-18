@@ -26,8 +26,12 @@ bot.dialog('/', function (session) {
     request(myurl, function(error, response, html){
     if(!error){
         var $ = cheerio.load(html);
-    session.send(myurl.toString())
-    session.send($.toString())
+        session.send(myurl.toString())
+        var inhalt = $('h1').text();
+        session.send(inhalt);
+        )
+
+
     }
     });
 
