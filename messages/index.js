@@ -15,9 +15,23 @@ var connector = useEmulator ? new builder.ChatConnector() : new botbuilder_azure
 
 var bot = new builder.UniversalBot(connector);
 
+
+
+
 bot.dialog('/', function (session) {
     session.send('You saissd ' + session.message.text);
-});
+    //url to parse
+    var myurl = 'https://www.bestcheck.de/ueber-uns'
+    //request zeug
+    request(myurl, function(error, response, html){
+    if(!error){
+        var $ = cheerio.load(html);
+    session.send(myurl.toString())
+    session.send($.toString())
+    }
+    });
+
+    });
 
 if (useEmulator) {
     var restify = require('restify');
