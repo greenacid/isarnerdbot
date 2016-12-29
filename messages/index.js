@@ -22,6 +22,8 @@ bot.dialog('/', function (session) {
     session.send('You saissd ' + session.message.text);
     //url to parse
     var myurl = 'https://www.bestcheck.de/ueber-uns'
+    var myurl_json = 'http://apps-rest.chip.de/api/v1/productlist/?categoryId=900'
+    
     //request zeug
     request(myurl, function(error, response, html){
     if(!error){
